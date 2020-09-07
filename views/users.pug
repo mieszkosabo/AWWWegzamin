@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  if showMyEntries
+    a(href='/users/my_entries') My entries
+  if sledzoneWpisy
+    ul
+      each wpis in sledzoneWpisy
+        li #{wpis.login_osoby}: #{wpis.tresc}
+
+    include pagination.pug

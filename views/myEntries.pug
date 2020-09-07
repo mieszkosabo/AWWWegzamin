@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  if entries
+      ul
+        each entry in entries
+          li #{entry.tresc} 
+            a(href="deleteEntry/" + entry.rowid) delete
+
+  form(method="post")
+    input(type="hidden", name="_csrf", value= csrfToken)
+    textarea#newEntryArea(name="newEntry", cols="30", rows="2")
+    input(type="submit", value="Add")

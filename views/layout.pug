@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if user
+      a(href="../logout") logout
+    block content
+
+  footer
+    p Mieszko Sabo egzamin WWW 2019 edycja 1

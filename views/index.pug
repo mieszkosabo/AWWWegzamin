@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if error_msg
+    p#error-message= error_msg
+  form(method="post")
+    input(type="hidden", name="_csrf", value= csrfToken)
+    input(type="text", name="login")
+    input(type="password", name="haslo")
+    input(type="submit", value="zaloguj")
+  div#ostatnie-wpisy
+  script(src='/javascripts/fetchEntries.js')
